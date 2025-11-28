@@ -1,149 +1,508 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Cours</title>
+    <title>Cours - e-course</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/Add-Another-Button.css">
-    <link rel="stylesheet" href="assets/css/Article-Clean.css">
-    <link rel="stylesheet" href="assets/css/Article-Dual-Column.css">
-    <link rel="stylesheet" href="assets/css/Article-List.css">
-    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/Contact-form-simple.css">
-    <link rel="stylesheet" href="assets/css/Contact-Form-v2-Modal--Full-with-Google-Map.css">
-    <link rel="stylesheet" href="assets/css/Dark-NavBar-1.css">
-    <link rel="stylesheet" href="assets/css/Dark-NavBar-2.css">
-    <link rel="stylesheet" href="assets/css/Dark-NavBar.css">
-    <link rel="stylesheet" href="assets/css/dh-highlight-icon-heading.css">
-    <link rel="stylesheet" href="assets/css/dh-navbar-inverse.css">
-    <link rel="stylesheet" href="assets/css/dh-row-text-image-right-responsive.css">
-    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
-    <link rel="stylesheet" href="assets/css/Google-Style-Text-Input.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="assets/css/Navigation-e-commerce.css">
-    <link rel="stylesheet" href="assets/css/Network-Particles-Hero.css">
-    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
-    <link rel="stylesheet" href="assets/css/Profile-Edit-Form-1.css">
-    <link rel="stylesheet" href="assets/css/Profile-Edit-Form.css">
-    <link rel="stylesheet" href="assets/css/Projects-Horizontal.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/Team-Grid.css">
+    <style>
+        :root {
+            --gray-dark: #1a1a1a;
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #1e1e1e;
+            --bg-tertiary: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent: #4a9eff;
+            --accent-hover: #6bb0ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .modern-nav {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .navbar-brand h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin: 0;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .navbar-brand span {
+            color: #6a6a6a !important;
+            -webkit-text-fill-color: #6a6a6a !important;
+        }
+
+        .nav-link {
+            color: var(--text-secondary) !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem !important;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary) !important;
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .nav-link i {
+            margin-right: 5px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #252525 100%);
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(74, 158, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(107, 176, 255, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .intro-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        /* Grille de matières moderne */
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .subject-card {
+            position: relative;
+            height: 320px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .subject-card:nth-child(1) { animation-delay: 0.1s; }
+        .subject-card:nth-child(2) { animation-delay: 0.2s; }
+        .subject-card:nth-child(3) { animation-delay: 0.3s; }
+        .subject-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(0, 0, 0, 0.4) 40%,
+                rgba(0, 0, 0, 0.9) 100%
+            );
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+
+        .subject-card:hover::before {
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.2) 0%,
+                rgba(0, 0, 0, 0.6) 40%,
+                rgba(0, 0, 0, 0.95) 100%
+            );
+        }
+
+        .subject-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s ease;
+        }
+
+        .subject-card:hover .subject-bg {
+            transform: scale(1.15);
+        }
+
+        .subject-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        .subject-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            z-index: 2;
+            transform: translateY(0);
+            transition: all 0.4s ease;
+        }
+
+        .subject-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .subject-description {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 10px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+        }
+
+        .subject-card:hover .subject-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .subject-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2.5rem;
+            color: rgba(255, 255, 255, 0.2);
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+
+        .subject-card:hover .subject-icon {
+            color: rgba(255, 255, 255, 0.4);
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .modern-footer {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            padding: 60px 20px 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .footer-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(74, 158, 255, 0.3);
+        }
+
+        .copyright {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 15px;
+            }
+
+            .subjects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 30px 15px;
+            }
+
+            .subject-card {
+                height: 280px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .navbar-brand h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .intro-title {
+                font-size: 1.8rem;
+            }
+
+            .subject-name {
+                font-size: 1.5rem;
+            }
+
+            .subject-content {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 
-<body style="background: var(--gray-dark);">
-    <header>
-        <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: #282d32;">
-            <div class="container"><a class="navbar-brand" style="padding: 0px;margin-left: 0px;height: 61px;width: 147.516px;" href="#"> <h1 style="color: white; font-weight: 600;">e-<span style="color:rgb(139, 140, 140)">course</span></h1></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon" style="color: var(--red);"></span></button>
-                <div class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="index.html"><i class="fa fa-home"></i>&nbsp;Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="cours.html"><i class="icon ion-ios-book"></i>&nbsp;Cours</a></li>
-                    </ul>
-                </div>
+<body>
+    <nav class="navbar navbar-expand-md modern-nav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h1>e-<span>course</span></h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" style="background: rgba(255,255,255,0.1);">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fa fa-home"></i> Accueil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cours.html">
+                            <i class="fa fa-book"></i> Cours
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
-    <div style="background: var(--gray-dark);">
-        <div class="container" style="background: #1a1a2e;">
-            <div class="row" style="background: #1a1a2e;">
-                <div class="col" style="background: var(--gray-dark);">
-                    <section class="team-grid">
-                        <div class="container" style="background: var(--gray-dark);">
-                            <div class="intro">
-                                <h2 class="text-center" style="color: white;">Matières disponibles</h2>
-                            </div>
-                            <div class="row people">
-                                <div onclick="php()" class="col-md-4 col-lg-3 item">
-                                    <div class="box" style="background-image:url(assets/img/php.jpg)">
-                                        <div class="cover">
-                                            <h3 class="name">PHP&amp;MySQL</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div onclick="python()" class="col-md-4 col-lg-3 item">
-                                    <div class="box" style="background-image:url(assets/img/python.jpg)">
-                                        <div class="cover">
-                                            <h3 class="name">PYTHON</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div onclick="laravel()" class="col-md-4 col-lg-3 item">
-                                    <div class="box" style="background-image:url(assets/img/laravel1.jpg)">
-                                        <div class="cover">
-                                            <h3 class="name">LARAVEL</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div onclick="java()" class="col-md-4 col-lg-3 item">
-                                    <div class="box" style="background-image:url(assets/img/java.jpg)">
-                                        <div class="cover">
-                                            <h3 class="name">JAVA</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <h2 class="intro-title">Matières disponibles</h2>
+        </div>
+    </section>
+
+    <div class="subjects-grid">
+        <div class="subject-card" onclick="php()">
+            <div class="subject-bg" style="background-image: url('assets/img/php.jpg')"></div>
+            <i class="fab fa-php subject-icon"></i>
+            <div class="subject-content">
+                <h3 class="subject-name">PHP & MySQL</h3>
+                <p class="subject-description">Développement web backend et gestion de bases de données</p>
+            </div>
+        </div>
+
+        <div class="subject-card" onclick="python()">
+            <div class="subject-bg" style="background-image: url('assets/img/python.jpg')"></div>
+            <i class="fab fa-python subject-icon"></i>
+            <div class="subject-content">
+                <h3 class="subject-name">Python</h3>
+                <p class="subject-description">Programmation polyvalente et data science</p>
+            </div>
+        </div>
+
+        <div class="subject-card" onclick="laravel()">
+            <div class="subject-bg" style="background-image: url('assets/img/laravel1.jpg')"></div>
+            <i class="fab fa-laravel subject-icon"></i>
+            <div class="subject-content">
+                <h3 class="subject-name">Laravel</h3>
+                <p class="subject-description">Framework PHP moderne pour applications web</p>
+            </div>
+        </div>
+
+        <div class="subject-card" onclick="java()">
+            <div class="subject-bg" style="background-image: url('assets/img/java.jpg')"></div>
+            <i class="fab fa-java subject-icon"></i>
+            <div class="subject-content">
+                <h3 class="subject-name">Java</h3>
+                <p class="subject-description">Programmation orientée objet et applications enterprise</p>
             </div>
         </div>
     </div>
-    <footer class="footer-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-3 item" style="background: #282d32;">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Matières disponibles</a></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-md-3 item">
-                    <h3>Apropos</h3>
-                    <ul>
-                        <li><a href="#">Matières</a></li>
-                        <li><a href="#">Enseignants</a></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="col-md-6 item text">
-                    <h3>e-course</h3>
-                    <p><br>Une plateforme de site éducatif en ligne qui peut répondre à vos besoins.<br><br></p>
-                </div>
-                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Matières disponibles</a></li>
+                    <li><a href="#">Certifications</a></li>
+                    <li><a href="#">Support en ligne</a></li>
+                </ul>
             </div>
-            <p class="copyright">ecourse © 2024</p>
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <ul>
+                    <li><a href="#">Matières</a></li>
+                    <li><a href="#">Enseignants</a></li>
+                    <li><a href="#">Notre mission</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>e-course</h3>
+                <p>Une plateforme de site éducatif en ligne qui peut répondre à vos besoins.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
         </div>
+        <p class="copyright">e-course © 2024 - Tous droits réservés</p>
     </footer>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="assets/js/Contact-Form-v2-Modal--Full-with-Google-Map.js"></script>
-    <script src="assets/js/Profile-Edit-Form.js"></script>
+    <script>
+        function php() {
+            window.location.href = 'php.html';
+        }
+        function python() {
+            window.location.href = 'python.html';
+        }
+        function laravel() {
+            window.location.href = 'laravel.html';
+        }
+        function java() {
+            window.location.href = 'java.html';
+        }
+    </script>
 </body>
-<script>
-    function php(){
-        window.location.href='php.html';
-    }
-    function python(){
-        window.location.href='python.html';
-    }
-    function laravel(){
-        window.location.href='laravel.html';
-    }
-    function java(){
-        window.location.href='java.html';
-    }
-</script>
+
 </html>
