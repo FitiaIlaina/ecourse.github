@@ -38,6 +38,213 @@
     <link rel="stylesheet" href="assets/css/Projects-Horizontal.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Grid.css">
+	<style>
+		* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .projects-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projects-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(100, 100, 100, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(70, 70, 70, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .intro h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .intro p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #b0b0b0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 10px;
+        }
+
+        .project-card {
+            background: linear-gradient(145deg, #252525, #1f1f1f);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-image::after {
+            opacity: 0;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        .project-description {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-section {
+                padding: 60px 15px;
+            }
+
+            .intro {
+                margin-bottom: 40px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .project-content {
+                padding: 20px;
+            }
+
+            .project-image {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects-section {
+                padding: 40px 10px;
+            }
+
+            .intro h2 {
+                font-size: 1.5rem;
+            }
+
+            .intro p {
+                font-size: 0.95rem;
+            }
+
+            .project-title {
+                font-size: 1.2rem;
+            }
+
+            .project-description {
+                font-size: 0.9rem;
+            }
+	</style>
 </head>
 
 <body style="background: var(--gray-dark);">
@@ -70,55 +277,53 @@
             </div>
         </div>
     </section>
-    <section>
-        <div class="row">
-            <div class="col">
-                <section class="projects-horizontal" style="background: var(--gray-dark);">
-                    <div class="container">
-                        <div class="intro">
-                            <h2 class="text-center" style="color: var(--white);">e-course : une meilleure plateforme d'éducation en ligne</h2>
-                            <p class="text-center">Qu'attendez-vous ? Optez-vous sur e-course pour un avenir meilleur</p>
-                        </div>
-                        <div class="row projects">
-                            <div class="col-sm-6 item">
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/autonome.webp"></a></div>
-                                    <div class="col">
-                                        <h3 class="name" style="color: white;">Apprentissage autonome</h3>
-                                        <p class="description">Une gestion flexible du temps selon les besoins et contraintes personnelles.<br></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 item">
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/compet.jpg"></a></div>
-                                    <div class="col">
-                                        <h3 class="name" style="color: white;">Amélioration des compétences</h3>
-                                        <p class="description">Progression dans leur carrière et se distinguer sur le marché du travail.<br></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 item">
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/devpers.jpeg"></a></div>
-                                    <div class="col">
-                                        <h3 class="name" style="color: white;">Développement personnel</h3>
-                                        <p class="description">Engagement des étudiants dans un apprentissage continu</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 item">
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/tous.jpg"></a></div>
-                                    <div class="col">
-                                        <h3 class="name" style="color: white;">Facilité à l'éducation pour tous</h3>
-                                        <p class="description">Accessible à un large public</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <section class="projects-section">
+        <div class="container">
+            <div class="intro">
+                <h2>e-course : une meilleure plateforme d'éducation en ligne</h2>
+                <p>Qu'attendez-vous ? Optez-vous sur e-course pour un avenir meilleur</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/img/autonome.webp" alt="Apprentissage autonome">
                     </div>
-                </section>
+                    <div class="project-content">
+                        <h3 class="project-title">Apprentissage autonome</h3>
+                        <p class="project-description">Une gestion flexible du temps selon les besoins et contraintes personnelles.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/img/compet.jpg" alt="Amélioration des compétences">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Amélioration des compétences</h3>
+                        <p class="project-description">Progression dans leur carrière et se distinguer sur le marché du travail.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/img/devpers.jpeg" alt="Développement personnel">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Développement personnel</h3>
+                        <p class="project-description">Engagement des étudiants dans un apprentissage continu</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/img/tous.jpg" alt="Facilité à l'éducation pour tous">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Facilité à l'éducation pour tous</h3>
+                        <p class="project-description">Accessible à un large public</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
