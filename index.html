@@ -5,247 +5,45 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Accueil</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/Add-Another-Button.css">
+    <link rel="stylesheet" href="assets/css/Article-Clean.css">
+    <link rel="stylesheet" href="assets/css/Article-Dual-Column.css">
+    <link rel="stylesheet" href="assets/css/Article-List.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Contact-form-simple.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-v2-Modal--Full-with-Google-Map.css">
+    <link rel="stylesheet" href="assets/css/Dark-NavBar-1.css">
+    <link rel="stylesheet" href="assets/css/Dark-NavBar-2.css">
+    <link rel="stylesheet" href="assets/css/Dark-NavBar.css">
+    <link rel="stylesheet" href="assets/css/dh-highlight-icon-heading.css">
+    <link rel="stylesheet" href="assets/css/dh-navbar-inverse.css">
+    <link rel="stylesheet" href="assets/css/dh-row-text-image-right-responsive.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/Google-Style-Text-Input.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <style>
-        :root {
-            --gray-dark: #1a1d23;
-            --card-bg: #282d32;
-            --accent-gray: #8b8c8c;
-            --light-gray: #a8a9aa;
-            --white: #ffffff;
-            --border-color: #3a3f45;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--gray-dark);
-        }
-
-        /* Styles pour la section "e-course: une meilleure plateforme..." */
-        .intro h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            letter-spacing: 1px;
-        }
-
-        .intro p {
-            font-size: 1.2rem;
-            color: var(--light-gray);
-            margin-bottom: 4rem;
-        }
-
-        .projects .item {
-            margin-bottom: 3rem;
-        }
-
-        .projects .item .row {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--border-color);
-            height: 100%;
-        }
-
-        .projects .item .row:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(139, 140, 140, 0.3);
-            border-color: var(--accent-gray);
-        }
-
-        .projects .item .col-md-12.col-lg-5 {
-            padding: 0;
-            overflow: hidden;
-        }
-
-        .projects .item img {
-            height: 220px;
-            width: 100%;
-            object-fit: cover;
-            transition: all 0.5s ease;
-        }
-
-        .projects .item .row:hover img {
-            transform: scale(1.15);
-            filter: brightness(1.1);
-        }
-
-        .projects .item .col {
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .projects .name {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--white);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-
-        .projects .name::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-gray), transparent);
-            transition: width 0.3s ease;
-        }
-
-        .projects .item .row:hover .name::after {
-            width: 100px;
-        }
-
-        .projects .description {
-            color: var(--light-gray);
-            line-height: 1.8;
-            font-size: 1rem;
-            margin: 0;
-        }
-
-        /* Footer Styles */
-        .footer-dark {
-            background: linear-gradient(180deg, var(--gray-dark) 0%, #0f1114 100%);
-            padding: 3rem 0 1rem;
-            border-top: 2px solid var(--border-color);
-            margin-top: 3rem;
-        }
-
-        .footer-dark h3 {
-            color: var(--white);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 1.1rem;
-        }
-
-        .footer-dark ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-dark ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-dark ul li a {
-            color: var(--light-gray);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-            position: relative;
-        }
-
-        .footer-dark ul li a::before {
-            content: '→';
-            position: absolute;
-            left: -20px;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .footer-dark ul li a:hover {
-            color: var(--white);
-            padding-left: 25px;
-        }
-
-        .footer-dark ul li a:hover::before {
-            opacity: 1;
-            left: 0;
-        }
-
-        .footer-dark .item.text p {
-            color: var(--light-gray);
-            line-height: 1.8;
-        }
-
-        .footer-dark .item.social {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .footer-dark .item.social a {
-            width: 45px;
-            height: 45px;
-            line-height: 45px;
-            text-align: center;
-            border-radius: 50%;
-            background: var(--card-bg);
-            color: var(--white);
-            display: inline-block;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--border-color);
-            font-size: 1.2rem;
-        }
-
-        .footer-dark .item.social a:hover {
-            background: var(--accent-gray);
-            transform: translateY(-8px) rotate(360deg);
-            box-shadow: 0 8px 25px rgba(139, 140, 140, 0.4);
-            border-color: var(--accent-gray);
-        }
-
-        .footer-dark .copyright {
-            color: var(--accent-gray);
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-        /* Responsive */
-        @media (max-width: 991px) {
-            .projects .item img {
-                height: 180px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .intro h2 {
-                font-size: 2rem;
-            }
-
-            .projects .item img {
-                height: 200px;
-            }
-
-            .projects .item .col {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-e-commerce.css">
+    <link rel="stylesheet" href="assets/css/Network-Particles-Hero.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="assets/css/Profile-Edit-Form-1.css">
+    <link rel="stylesheet" href="assets/css/Profile-Edit-Form.css">
+    <link rel="stylesheet" href="assets/css/Projects-Horizontal.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Team-Grid.css">
 </head>
 
 <body style="background: var(--gray-dark);">
     <header>
         <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: #282d32;">
-            <div class="container">
-                <a class="navbar-brand" style="padding: 0px;margin-left: 0px;height: 61px;width: 147.516px;" href="#">
-                    <h1 style="color: white; font-weight: 600;">e-<span style="color:rgb(139, 140, 140)">course</span></h1>
-                </a>
-                <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="navbar-toggler-icon" style="color: var(--red);"></span>
-                </button>
+            <div class="container"><a class="navbar-brand" style="padding: 0px;margin-left: 0px;height: 61px;width: 147.516px;" href="#"><h1 style="color: white; font-weight: 600;">e-<span style="color:rgb(139, 140, 140)">course</span></h1></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon" style="color: var(--red);"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="#"><i class="fa fa-home"></i>&nbsp;Accueil</a></li>
@@ -255,32 +53,27 @@
             </div>
         </nav>
     </header>
-
     <section style="margin-top: 18px;">
         <div>
-            <div class="jumbotron jumbotron-fluid jumbotron-main" style="height:100vh;width:100%;">
-                <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
-                <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
-                <div id="particles-js">
-                    <canvas class="particles-js-canvas-el" width="1409" height="319" style="width: 100%; height: 100%;"></canvas>
-                </div>
+            <div class="jumbotron jumbotron-fluid jumbotron-main" style="height:100vh;width:100%;"><script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+<script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+    <div id="particles-js">
+	<canvas class="particles-js-canvas-el" width="1409" height="319" style="width: 100%; height: 100%;"></canvas>
+	</div>
                 <div class="container center-vertically-holder" style="margin-top:-20px;">
                     <div class="row center-vertically">
                         <div class="col-md-8 offset-sm-0 offset-md-2 text-center" style="margin-top:100px;margin-bottom:100px;">
-                            <h1 data-aos="fade-down" data-aos-duration="1000" data-aos-delay="700" id="hero-title" style="margin-bottom:0;">
-                                Bienvenue sur <br>e-<span style="color:rgb(139, 140, 140)">course</span>
-                            </h1>
-                        </div>
+                            <h1 data-aos="fade-down" data-aos-duration="1000" data-aos-delay="700" id="hero-title" style="margin-bottom:0;">Bienvenue sur <br>e-<span style="color:rgb(139, 140, 140)">course</span></h1>
+                                </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <section>
         <div class="row">
             <div class="col">
-                <section class="projects-horizontal" style="background: var(--gray-dark); padding: 5rem 0;">
+                <section class="projects-horizontal" style="background: var(--gray-dark);">
                     <div class="container">
                         <div class="intro">
                             <h2 class="text-center" style="color: var(--white);">e-course : une meilleure plateforme d'éducation en ligne</h2>
@@ -291,8 +84,8 @@
                                 <div class="row">
                                     <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/autonome.webp"></a></div>
                                     <div class="col">
-                                        <h3 class="name">Apprentissage autonome</h3>
-                                        <p class="description">Une gestion flexible du temps selon les besoins et contraintes personnelles.</p>
+                                        <h3 class="name" style="color: white;">Apprentissage autonome</h3>
+                                        <p class="description">Une gestion flexible du temps selon les besoins et contraintes personnelles.<br></p>
                                     </div>
                                 </div>
                             </div>
@@ -300,8 +93,8 @@
                                 <div class="row">
                                     <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/compet.jpg"></a></div>
                                     <div class="col">
-                                        <h3 class="name">Amélioration des compétences</h3>
-                                        <p class="description">Progression dans leur carrière et se distinguer sur le marché du travail.</p>
+                                        <h3 class="name" style="color: white;">Amélioration des compétences</h3>
+                                        <p class="description">Progression dans leur carrière et se distinguer sur le marché du travail.<br></p>
                                     </div>
                                 </div>
                             </div>
@@ -309,7 +102,7 @@
                                 <div class="row">
                                     <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/devpers.jpeg"></a></div>
                                     <div class="col">
-                                        <h3 class="name">Développement personnel</h3>
+                                        <h3 class="name" style="color: white;">Développement personnel</h3>
                                         <p class="description">Engagement des étudiants dans un apprentissage continu</p>
                                     </div>
                                 </div>
@@ -318,7 +111,7 @@
                                 <div class="row">
                                     <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/tous.jpg"></a></div>
                                     <div class="col">
-                                        <h3 class="name">Facilité à l'éducation pour tous</h3>
+                                        <h3 class="name" style="color: white;">Facilité à l'éducation pour tous</h3>
                                         <p class="description">Accessible à un large public</p>
                                     </div>
                                 </div>
@@ -329,7 +122,6 @@
             </div>
         </div>
     </section>
-
     <footer class="footer-dark">
         <div class="container">
             <div class="row">
@@ -337,6 +129,7 @@
                     <h3>Services</h3>
                     <ul>
                         <li><a href="#">Matières disponibles</a></li>
+                        <li></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-md-3 item">
@@ -344,29 +137,24 @@
                     <ul>
                         <li><a href="#">Matières</a></li>
                         <li><a href="#">Enseignants</a></li>
+                        <li></li>
                     </ul>
                 </div>
                 <div class="col-md-6 item text">
                     <h3>e-course</h3>
-                    <p>Une plateforme de site éducatif en ligne qui peut répondre à vos besoins.</p>
+                    <p><br>Une plateforme de site éducatif en ligne qui peut répondre à vos besoins.<br><br></p>
                 </div>
-                <div class="col item social">
-                    <a href="#"><i class="icon ion-social-facebook"></i></a>
-                    <a href="#"><i class="icon ion-social-twitter"></i></a>
-                    <a href="#"><i class="icon ion-social-snapchat"></i></a>
-                    <a href="#"><i class="icon ion-social-instagram"></i></a>
-                </div>
+                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
             </div>
             <p class="copyright">ecourse © 2024</p>
         </div>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    <script src="assets/js/Contact-Form-v2-Modal--Full-with-Google-Map.js"></script>
+    <script src="assets/js/Profile-Edit-Form.js"></script>
 </body>
 
 </html>
