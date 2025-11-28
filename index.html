@@ -1,160 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Accueil</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/Add-Another-Button.css">
-    <link rel="stylesheet" href="assets/css/Article-Clean.css">
-    <link rel="stylesheet" href="assets/css/Article-Dual-Column.css">
-    <link rel="stylesheet" href="assets/css/Article-List.css">
-    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/Contact-form-simple.css">
-    <link rel="stylesheet" href="assets/css/Contact-Form-v2-Modal--Full-with-Google-Map.css">
-    <link rel="stylesheet" href="assets/css/Dark-NavBar-1.css">
-    <link rel="stylesheet" href="assets/css/Dark-NavBar-2.css">
-    <link rel="stylesheet" href="assets/css/Dark-NavBar.css">
-    <link rel="stylesheet" href="assets/css/dh-highlight-icon-heading.css">
-    <link rel="stylesheet" href="assets/css/dh-navbar-inverse.css">
-    <link rel="stylesheet" href="assets/css/dh-row-text-image-right-responsive.css">
-    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
-    <link rel="stylesheet" href="assets/css/Google-Style-Text-Input.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="assets/css/Navigation-e-commerce.css">
-    <link rel="stylesheet" href="assets/css/Network-Particles-Hero.css">
-    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
-    <link rel="stylesheet" href="assets/css/Profile-Edit-Form-1.css">
-    <link rel="stylesheet" href="assets/css/Profile-Edit-Form.css">
-    <link rel="stylesheet" href="assets/css/Projects-Horizontal.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/Team-Grid.css">
+    <title>Accueil - e-course</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        nav.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(0, 0, 0, 0.98);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo span {
+            color: #8b8c8c;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #666 0%, #999 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .particles-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(150, 150, 150, 0.3);
+            border-radius: 50%;
+            animation: float 20s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+            50% { transform: translateY(-100px) translateX(100px); opacity: 0.8; }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #999 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(10deg); }
+        }
+
+        .hero span {
+            color: #8b8c8c;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title p {
+            color: #8b8c8c;
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(50, 50, 50, 0.5) 0%, rgba(30, 30, 30, 0.5) 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border-color: rgba(150, 150, 150, 0.3);
+            background: linear-gradient(135deg, rgba(60, 60, 60, 0.6) 0%, rgba(40, 40, 40, 0.6) 100%);
+        }
+
+        .feature-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .feature-card p {
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 15, 15, 0.95);
+            padding: 3rem 2rem 1rem;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #999;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: #ccc;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #555 0%, #333 100%);
+            border-radius: 50%;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #777 0%, #555 100%);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #8b8c8c;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
 </head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">e-<span>course</span></a>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fa fa-home"></i> Accueil</a></li>
+                <li><a href="cours.html"><i class="fa fa-book"></i> Cours</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<body style="background: var(--gray-dark);">
-    <header>
-        <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: #282d32;">
-            <div class="container"><a class="navbar-brand" style="padding: 0px;margin-left: 0px;height: 61px;width: 147.516px;" href="#"><h1 style="color: white; font-weight: 600;">e-<span style="color:rgb(139, 140, 140)">course</span></h1></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon" style="color: var(--red);"></span></button>
-                <div class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="#"><i class="fa fa-home"></i>&nbsp;Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="cours.html"><i class="icon ion-ios-book"></i>&nbsp;Cours</a></li>
-                    </ul>
-                </div>
+    <section class="hero">
+        <div class="particles-bg" id="particles"></div>
+        <div class="hero-content">
+            <h1>Bienvenue sur<br>e-<span>course</span></h1>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="section-title">
+            <h2>e-course : une meilleure plateforme d'éducation en ligne</h2>
+            <p>Qu'attendez-vous ? Optez pour e-course pour un avenir meilleur</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="assets/img/autonome.webp" alt="Apprentissage autonome" onerror="this.style.background='linear-gradient(135deg, #555 0%, #333 100%)'">>
+                <h3>Apprentissage autonome</h3>
+                <p>Une gestion flexible du temps selon les besoins et contraintes personnelles.</p>
             </div>
-        </nav>
-    </header>
-    <section style="margin-top: 18px;">
-        <div>
-            <div class="jumbotron jumbotron-fluid jumbotron-main" style="height:100vh;width:100%;"><script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
-<script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
-    <div id="particles-js">
-	<canvas class="particles-js-canvas-el" width="1409" height="319" style="width: 100%; height: 100%;"></canvas>
-	</div>
-                <div class="container center-vertically-holder" style="margin-top:-20px;">
-                    <div class="row center-vertically">
-                        <div class="col-md-8 offset-sm-0 offset-md-2 text-center" style="margin-top:100px;margin-bottom:100px;">
-                            <h1 data-aos="fade-down" data-aos-duration="1000" data-aos-delay="700" id="hero-title" style="margin-bottom:0;">Bienvenue sur <br>e-<span style="color:rgb(139, 140, 140)">course</span></h1>
-                                </div>
-                    </div>
-                </div>
+
+            <div class="feature-card">
+                <img src="assets/img/compet.jpg" alt="Amélioration des compétences" onerror="this.style.background='linear-gradient(135deg, #555 0%, #333 100%)'">>
+                <h3>Amélioration des compétences</h3>
+                <p>Progression dans leur carrière et se distinguer sur le marché du travail.</p>
+            </div>
+
+            <div class="feature-card">
+                <img src="assets/img/devpers.jpeg" alt="Développement personnel" onerror="this.style.background='linear-gradient(135deg, #555 0%, #333 100%)'">>
+                <h3>Développement personnel</h3>
+                <p>Engagement des étudiants dans un apprentissage continu</p>
+            </div>
+
+            <div class="feature-card">
+                <img src="assets/img/tous.jpg" alt="Facilité à l'éducation" onerror="this.style.background='linear-gradient(135deg, #555 0%, #333 100%)'">>
+                <h3>Facilité à l'éducation pour tous</h3>
+                <p>Accessible à un large public</p>
             </div>
         </div>
     </section>
-    <section>
-        <div class="row">
-            <div class="col">
-                <section class="projects-horizontal" style="background: var(--gray-dark);">
-                    <div class="container">
-                        <div class="intro">
-                            <h2 class="text-center" style="color: var(--white);">e-course : une meilleure plateforme d'éducation en ligne</h2>
-                            <p class="text-center">Qu'attendez-vous ? Optez-vous sur e-course pour un avenir meilleur</p>
-                        </div>
-                        <div class="row projects">
-                            <div class="col-sm-6 item">
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/autonome.webp"></a></div>
-                                    <div class="col">
-                                        <h3 class="name" style="color: white;">Apprentissage autonome</h3>
-                                        <p class="description">Une gestion flexible du temps selon les besoins et contraintes personnelles.<br></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 item">
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/compet.jpg"></a></div>
-                                    <div class="col">
-                                        <h3 class="name" style="color: white;">Amélioration des compétences</h3>
-                                        <p class="description">Progression dans leur carrière et se distinguer sur le marché du travail.<br></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 item">
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/devpers.jpeg"></a></div>
-                                    <div class="col">
-                                        <h3 class="name" style="color: white;">Développement personnel</h3>
-                                        <p class="description">Engagement des étudiants dans un apprentissage continu</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 item">
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="assets/img/tous.jpg"></a></div>
-                                    <div class="col">
-                                        <h3 class="name" style="color: white;">Facilité à l'éducation pour tous</h3>
-                                        <p class="description">Accessible à un large public</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Matières disponibles</a></li>
+                    <li><a href="#">Cours en ligne</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <ul>
+                    <li><a href="#">Matières</a></li>
+                    <li><a href="#">Enseignants</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>e-course</h3>
+                <p>Une plateforme de site éducatif en ligne qui peut répondre à vos besoins.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
-    </section>
-    <footer class="footer-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-3 item">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Matières disponibles</a></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-md-3 item">
-                    <h3>Apropos</h3>
-                    <ul>
-                        <li><a href="#">Matières</a></li>
-                        <li><a href="#">Enseignants</a></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="col-md-6 item text">
-                    <h3>e-course</h3>
-                    <p><br>Une plateforme de site éducatif en ligne qui peut répondre à vos besoins.<br><br></p>
-                </div>
-                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
-            </div>
-            <p class="copyright">ecourse © 2024</p>
-        </div>
+        <p class="copyright">e-course © 2024</p>
     </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="assets/js/Contact-Form-v2-Modal--Full-with-Google-Map.js"></script>
-    <script src="assets/js/Profile-Edit-Form.js"></script>
-</body>
 
+    <script>
+        // Animated particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.width = Math.random() * 5 + 2 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
